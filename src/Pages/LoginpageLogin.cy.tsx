@@ -9,7 +9,7 @@ import { message } from 'antd';
 //   })
 // })
 
-describe('<Login />', () => {
+describe('<Login/>', () => {
   beforeEach(() => {
     const dummyUser = [
       {
@@ -33,7 +33,7 @@ describe('<Login />', () => {
     });
 
     cy.get('[data-testid="btn-login"]').click();
-
+    cy.wait(6500)
     // cy.contains("Name is required").should("exist");
     // cy.contains("Email is required").should("exist");
     // cy.contains("Password atleast 3 charecters").should("exist");
@@ -44,26 +44,27 @@ describe('<Login />', () => {
   it("Shows errors message if give invvalid input", () => {
     cy.mount(<Login />);
     
-    cy.get('[data-testid="login-name"]').type("Ton");
-    cy.get('[data-testid="login-email"]').type("Ton@");
-    cy.get('[data-testid="login-password"]').type("123");
+    cy.get('[data-testid="login-name"]').type("Ton").wait(2000);
+    cy.get('[data-testid="login-email"]').type("Ton@").wait(2000);
+    cy.get('[data-testid="login-password"]').type("123").wait(2000);
     cy.get('[data-testid="btn-login"]').click();
     // cy.contains("Name is required in minimum 5 words").should("exit")
     // cy.contains("Invalied email fromet").should("exist");
-
+    cy.wait(6500)
   })
 
   // optional test
   it("shows invalid email format error", () => {
     cy.mount(<Login />);
 
-    cy.get('[data-testid="login-name"]').type("Tonmoy");
-    cy.get('[data-testid="login-email"]').type("wrongemail");
-    cy.get('[data-testid="login-password"]').type("123456");
+    cy.get('[data-testid="login-name"]').type("Tonmoy").wait(2000);
+    cy.get('[data-testid="login-email"]').type("wrongemail").wait(2000);
+    cy.get('[data-testid="login-password"]').type("123456").wait(2000);
 
     cy.get('[data-testid="btn-login"]').click();
 
     // cy.contains("Invalied email fromet").should("exist");
+    cy.wait(6500)
   });
 
 
@@ -72,14 +73,15 @@ describe('<Login />', () => {
   it("shows login error modal when user not found", () => {
     cy.mount(<Login />);
 
-    cy.get('[data-testid="login-name"]').type("Unknown");
-    cy.get('[data-testid="login-email"]').type("unknown@gmail.com");
-    cy.get('[data-testid="login-password"]').type("111111");
+    cy.get('[data-testid="login-name"]').type("Unknown").wait(2000);
+    cy.get('[data-testid="login-email"]').type("unknown@gmail.com").wait(2000);
+    cy.get('[data-testid="login-password"]').type("111111").wait(2000);
 
     cy.get('[data-testid="btn-login"]').click();
 
     cy.contains("Login Error ⚠️").should("exist");
     cy.contains("Invalied name or email or password").should("exist");
+    cy.wait(6500)
   });
 
 
@@ -88,6 +90,7 @@ describe('<Login />', () => {
   it('renders login component', () => {
     cy.mount(<Login />);
     cy.get('[data-testid="cylogin-title"]').should("exist");
+    cy.wait(6500)
   });
 
 
@@ -99,13 +102,14 @@ describe('<Login />', () => {
     // cy.get('input[placeholder="Enter your name"]').type("Tonmoy");
     // cy.get('input[placeholder="Enter your eamil"]').type("test@gmail.com");
     // cy.get('input[placeholder="Enter your password"]').type("123456");
-    cy.get('[data-testid="login-name"]').type("Tonmoy");
-    cy.get('[data-testid="login-email"]').type("test@gmail.com");
-    cy.get('[data-testid="login-password"]').type("123456");
+    cy.get('[data-testid="login-name"]').type("Tonmoy").wait(2000);
+    cy.get('[data-testid="login-email"]').type("test@gmail.com").wait(2000);
+    cy.get('[data-testid="login-password"]').type("123456").wait(2000);
 
 
     // cy.contains("Login").click();
 cy.get('[data-testid="btn-login"]').click()
     // cy.contains("Log Successful 🎉").should("exist");
+      cy.wait(6500)
   });
 });

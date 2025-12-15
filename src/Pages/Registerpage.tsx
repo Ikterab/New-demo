@@ -38,7 +38,9 @@ export function Register() {
   
   const user = useSelector((state: RootState) => state.user.data)
 
-    const handlesubmit = (value:RegisterData) => {
+   
+  
+  const handlesubmit = (value: RegisterData) => {
         
           setLoading(true)
       

@@ -19,6 +19,8 @@ const userslice = createSlice({
             state.data.push(action.payload);
             localStorage.setItem('registerdata', JSON.stringify(state.data));
         },
+
+
         logoutUser: (state) => {
             state.data = [];
             localStorage.removeItem("registerdata");

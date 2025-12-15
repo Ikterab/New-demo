@@ -12,13 +12,13 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <div></div>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Register />} />
-          {/* <Route path='/' element={<Register1test/>} /> */}
+          <Route path='/' element={<Register/>} />
           <Route path='/Loginpage' element={<Login />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   )
 }
