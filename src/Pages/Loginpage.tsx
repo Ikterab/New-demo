@@ -19,7 +19,7 @@ export function Login() {
         
      const result=loginSchema.safeParse(value)
         
-        if (!result.success)
+        if (!result.success) 
         {
             // setError(result.error.issues[0].message)
             result.error.issues.forEach((issue) => {
