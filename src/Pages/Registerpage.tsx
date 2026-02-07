@@ -139,6 +139,16 @@ export function Register() {
                 />
               </Form.Item>
               <Form.Item
+                label={<span className="text-[15px]">Category</span>}   
+                name='category'
+                rules={[{ required: true, message:"Enter your category" }]}
+              >
+                <Input
+                  placeholder="Enter your category"
+                
+                />
+              </Form.Item>
+              <Form.Item
                 label={<span className='text-[15px] '>Password</span>}
                 name='password'
                 rules={[{ required: true, message: 'Please enter password!' }]}

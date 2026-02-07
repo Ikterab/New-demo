@@ -7,7 +7,7 @@
 
 @layer components{
   .horizantalPadding {
-  @apply px-6 sm:px-8 md:px-10 lg:px-16 xl:px-20
+  @apply  px-6 sm:px-8 md:px-10 lg:px-16 xl:px-20
 }
 }
 
