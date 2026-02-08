@@ -12,6 +12,7 @@ export type RegisterData = {
   name: string
   email: string
   phonenumber: string
+  category: string
   password: string
   confirmpassword: string
 }
@@ -31,7 +32,7 @@ export function Register() {
     // })
  type modelstype= 'show' | 'Error'  | null
  
-  const [model, setModel] = useState<modelstype>(null)
+  const [model, setModel] = useState<modelstype>(null)  
   const [error,setErrorMessage]=useState('')
     const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState<RegisterData | null>(null)

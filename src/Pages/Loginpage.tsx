@@ -4,9 +4,9 @@ import { Form, Input, Button, Modal } from 'antd'
 import{ z } from 'zod'
 import { loginSchema  } from "../Ts files/loginscema";
 import type { loginData } from "../Ts files/loginscema";
-
+import { useNavigate } from "react-router-dom"; 
 export function Login() {
-    
+    const navigate=useNavigate()
 
     type modelstype= 'show' | 'Error'  | null
     const [form] = Form.useForm()
@@ -32,7 +32,9 @@ export function Login() {
             })
             return
         }
-        
+        else {
+          navigate('/Dashboard')
+        }
         const userdata: loginData[] = JSON.parse(localStorage.getItem('registerdata') || '[]')
         const user=userdata.find((u)=>u.name===result.data.name && u.email===result.data.email && u.password===result.data.password )
         
