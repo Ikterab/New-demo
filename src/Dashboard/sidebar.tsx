@@ -10,11 +10,11 @@ type props = {
 export const Sidebar = ({ collapsed}:props) => {
     const forarrow=["About Us","Our Companies"]
     return (<>
-        <div className={`w-[300px] h-full top-0  bg-blue-400 fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  >
+        <div className={`w-[300px] h-full top-0 py-10 bg-blue-400 fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  >
               <h1 className="px-10 text-[30px] text-white font-semibold ">Demian </h1>
             <div>
                 {
-                    ["Home", "About Us", "Our Companies", "Contact US"].map((items, index) => (
+                    ["Profile", "About Us", "Our Companies", "Contact US"].map((items, index) => (
                         <Link
                             key={index}
                             to={`/${items.toLowerCase()}`}

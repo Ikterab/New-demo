@@ -15,16 +15,17 @@ type props = {
 export const Header = ({ collapsed, setcollapsed}:props) => {
     
     
-    return (<>
-        <div className="sticky">
+    return (
+        <div className="py-10 px-6 bg-white shadow-md w-full " >
+        <div className=" flex flex-start gap-4 sticky">
             <button
                 onClick={() => setcollapsed(!collapsed)}
             >
                 {collapsed ? <HiOutlineMenuAlt2 size={25} /> : <HiOutlineMenuAlt3 size={ 25} />  }
             </button>
-            
+        <input className=" border-[1px] border-gray-300"/>
         </div>
     
     
-    </>)
+    </div>)
 }
