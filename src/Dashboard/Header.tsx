@@ -23,7 +23,7 @@ export const Header = ({ collapsed, setcollapsed}:props) => {
             >
                 {collapsed ? <HiOutlineMenuAlt2 size={25} /> : <HiOutlineMenuAlt3 size={ 25} />  }
             </button>
-        <input className=" border-[1px] border-gray-300"/>
+        <input className=" border-[1px] rounded-md border-gray-300"/>
         </div>
     
     

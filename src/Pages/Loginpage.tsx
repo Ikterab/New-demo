@@ -5,6 +5,10 @@ import{ z } from 'zod'
 import { loginSchema  } from "../Ts files/loginscema";
 import type { loginData } from "../Ts files/loginscema";
 import { useNavigate } from "react-router-dom"; 
+import { Category } from "../Dashboard/config";
+
+
+
 export function Login() {
     const navigate=useNavigate()
 
@@ -15,7 +19,7 @@ export function Login() {
     const [error,setError]=useState<string|null >(null)        // error display sate
 
 
-    const handleSubmit = (value:loginData) => { 
+    const handleSubmit = (value:loginData,) => { 
         
      const result=loginSchema.safeParse(value)
         
@@ -32,11 +36,14 @@ export function Login() {
             })
             return
         }
-        else {
-          navigate('/Dashboard')
-        }
+        // else {
+
+        //   navigate('/Dashboard')
+        // }
         const userdata: loginData[] = JSON.parse(localStorage.getItem('registerdata') || '[]')
-        const user=userdata.find((u)=>u.name===result.data.name && u.email===result.data.email && u.password===result.data.password )
+      const user = userdata.find((u) => u.name === result.data.name &&
+                                        u.email === result.data.email &&
+                                        u.password === result.data.password)
         
         if (!user)
         {
@@ -45,10 +52,14 @@ export function Login() {
             setOpenModal('Error')
         }
         else {
+
             setError(null)
             setOpenModal('show')
           setSubmitted(result.data)
           form.resetFields()
+          navigate('/Dashboard')
+
+          
         }
         
       

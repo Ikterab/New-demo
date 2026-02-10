@@ -7,8 +7,12 @@ import { Link } from "react-router-dom";
 type props = {
     collapsed:boolean
 }
-export const Sidebar = ({ collapsed}:props) => {
+
+export const Sidebar = ({ collapsed }: props) => {
     const forarrow=["About Us","Our Companies"]
+    
+    
+    
     return (<>
         <div className={`w-[300px] h-full top-0 py-10 bg-blue-400 fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  >
               <h1 className="px-10 text-[30px] text-white font-semibold ">Demian </h1>
