@@ -99,7 +99,7 @@ export function Register() {
                   },
                 ])
               }}
-            >
+          >
               <Form.Item
                 label={<span className='text-[15px] '>Full Name</span>}
                 name='name'

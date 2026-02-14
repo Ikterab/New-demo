@@ -4,12 +4,17 @@ import React from "react";
 //     category: Category
 // }
 
-export enum Category {
-    Requester = 'Requester',
-        Admin = "Admin",
-        Accountant = 'Accountant',
-}
-
+// export enum Category {
+//     Requester = 'Requester',
+//         Admin = "Admin",
+//         Accountant = 'Accountant',
+// }
+export const Category = {
+    Requester:'Requester',
+            Admin:"Admin",
+            Accountant:'Accountant',
+} as const
+export type categoryType= typeof Category[keyof typeof Category]
 export type Dashboardrole = {
     sidebarbg: string,
     textclass: string,
@@ -17,20 +22,21 @@ export type Dashboardrole = {
 
 }     
 
-export const dashboardConfig: Record<Category, Dashboardrole> ={
-    [Category.Requester]: {
+export const dashboardConfig: Record< categoryType, Dashboardrole> ={
+// export const dashboardConfig: { [key in Category]: Dashboardrole } ={
+   Requester: {
         sidebarbg: "bg-blue-500",
         textclass:"text-white",
         // rootpath: "/requester",
         rootpath:''
     },
-    [Category.Admin]: {
+    Admin: {
         sidebarbg: "bg-black",
         textclass: "text-white",
         // rootpath: "/requester",
         rootpath: ''
     },
-    [Category.Accountant]: {
+    Accountant: {
         sidebarbg: "bg-red-500",
         textclass:"text-white",
         // rootpath: "/requester",

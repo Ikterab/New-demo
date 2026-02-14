@@ -52,11 +52,12 @@ export function Login() {
             setOpenModal('Error')
         }
         else {
-
+             
             setError(null)
             setOpenModal('show')
           setSubmitted(result.data)
           form.resetFields()
+          localStorage.setItem('userList',JSON.stringify(user))
           navigate('/Dashboard')
 
           
