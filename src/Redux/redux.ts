@@ -23,7 +23,7 @@ const userslice = createSlice({
 
         logoutUser: (state) => {
             state.data = [];
-            localStorage.removeItem("registerdata");
+            localStorage.removeItem("userList");
         },
     },
 });
