@@ -1,11 +1,11 @@
-import React, { Children } from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
 
 type protectedRoute = {
-    childern:React.ReactNode
+    children: React.ReactNode;
     roles:string[]
 }
-const Protectedroute = ({roles}:protectedRoute) => {
+const Protectedroute = ({children, roles}:protectedRoute) => {
     const user = JSON.parse(localStorage.getItem('userList') || 'null')
     if (!user)
     {
@@ -15,8 +15,9 @@ const Protectedroute = ({roles}:protectedRoute) => {
   
     if (!roles.includes(user.category))
     {
-        return <Navigate to='/Dshboard' />
+        return <Navigate to='/Loginpage'/>
         
     }
-
+    return children;
 }
+export default Protectedroute

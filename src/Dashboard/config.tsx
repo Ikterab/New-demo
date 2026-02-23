@@ -34,12 +34,12 @@ export const dashboardConfig: Record< categoryType, Dashboardrole> ={
         sidebarbg: "bg-blue-500",
         textclass:"text-black",
         // rootpath: "/requester",
-        rootpath: '',
+        rootpath: '/dashboard/requester',
         menu: [
-            // { name: 'Dashboard', path: '/dashboard/requester', icon: null },
-            // { name: 'Test 1', path: '/dashboard/requester/test1', icon: null },
-            // { name: 'Test 2', path: '/dashboard/requester/test2', icon: null }
-            // { name: 'Test 3', path: '/dashboard/requester/test3', icon: null }
+            { name: 'Dashboard', path: '/dashboard/requester', icon: null },
+            { name: 'Test 1', path: '/dashboard/requester/test1', icon: null },
+            { name: 'Test 2', path: '/dashboard/requester/test2', icon: null },
+            { name: 'Test 3', path: '/dashboard/requester/test3', icon: null }
 
 
         ]
@@ -48,14 +48,26 @@ export const dashboardConfig: Record< categoryType, Dashboardrole> ={
         sidebarbg: "bg-black",
         textclass: "text-white",
         // rootpath: "/requester",
-        rootpath: '',
-        menu: []
+        rootpath: '/dashboard/admin',
+        menu: [
+            { name: 'Dashboard', path: '/dashboard/admin', icon: null },
+            { name: 'Test1', path: '/dashboard/admin/test1', icon: null },
+            { name: 'Test2', path: '/dashboard/admin/test2', icon: null },
+            { name: 'Test3', path: '/dashboard/admin/test3', icon: null }
+
+
+        ]
     },
     [Category.Accountant]: {
         sidebarbg: "bg-red-500",
         textclass:"text-white",
         // rootpath: "/requester",
-        rootpath: '',
-        menu: []
+        rootpath: '/dashboard/accountant',
+        menu: [
+            { name: 'Dashboard', path: '/dashboard/accountant', icon: null },
+            { name: 'Test1', path: '/dashboard/accountant/test1', icon: null },
+            { name: 'Test2', path: '/dashboard/accountant/test2', icon: null },
+            { name: 'Test3', path: '/dashboard/accountant/test3', icon: null }
+        ]
     },
 }
