@@ -14,6 +14,7 @@ import Test3Acc from "../Pages/Test3forAccountant";
 import Test1Admin from "../Pages/Test1forAdmin";
 import Test2Admin from "../Pages/Test2forAdmin";
 import Test3Admin from "../Pages/Test3forAdmin";
+import CommonDashboard from "../Pages/Commondashboardpage";
 // import { categoryType } from "../Dashboard/config";
 import { Category } from "../Dashboard/config";
 export const router = createBrowserRouter([
@@ -41,12 +42,19 @@ export const router = createBrowserRouter([
 
             {
                 path: 'dashboard/requester',
-                element: <Dashboard />,
+                element: (<Protectedroute roles={[Category.Requester]}>
+                    <Dashboard />
+                </Protectedroute>) ,
                 children: [{
                     index: true,
-                    element:<Test1/>
+                    element:<CommonDashboard/>
 
                 },
+                    {
+                        path: 'Test1',
+                        element: <Test1/>
+
+                    },
                     {
                         path: 'Test2',
                         element:<Test2/>
@@ -62,12 +70,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'dashboard/admin',
-                element: <Dashboard />,
+                element: (<Protectedroute roles={[Category.Admin]}>
+                    <Dashboard />
+                </Protectedroute>),
                 children: [{
                     index: true,
-                    element: <Test1Admin />
+                    element: <CommonDashboard />
 
                 },
+                    {
+                        path: 'Test1Admin',
+                        element: <Test1Admin />
+
+                    },
                 {
                     path: 'Test2Admin',
                     element: <Test2Admin />
@@ -83,12 +98,20 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'dashboard/accountant',
-                element: <Dashboard />,
+                element: (
+                    <Protectedroute roles={[Category.Accountant]}>
+                        <Dashboard />
+                    </Protectedroute>),
                 children: [{
                     index: true,
-                    element: <Test1Acc/>
+                    element: <CommonDashboard/>
 
                 },
+                    {
+                        path: 'Test1Acc',
+                        element: <Test1Acc />
+
+                    },
                 {
                     path: 'Test2Acc',
                     element: <Test2Acc />
@@ -102,6 +125,14 @@ export const router = createBrowserRouter([
 
                 ]
             },
+            {
+                path: '*',
+                element: (
+                    <div className="h-screen flex justify-center items-center text-3xl font-bold">
+                        404 Not Found
+                    </div>
+                ),
+            }
         
         ],
         

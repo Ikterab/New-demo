@@ -7,16 +7,16 @@ type protectedRoute = {
 }
 const Protectedroute = ({children, roles}:protectedRoute) => {
     const user = JSON.parse(localStorage.getItem('userList') || 'null')
-    if (!user)
-    {
-        return <Navigate to='/Loginpage' replace />
+    // if (!user)
+    // {
+    //     return <Navigate to='/Loginpage' replace />
         
-    }
+    // }
   
-    if (!roles.includes(user.category))
+    if (!user || !roles.includes(user.category))
     {
-        return <Navigate to='/Loginpage'/>
-        
+        return <Navigate to='/Loginpage' replace/>
+         
     }
     return children;
 }

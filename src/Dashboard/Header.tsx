@@ -13,19 +13,21 @@ type props = {
     setcollapsed:(value:boolean)=>void
 }
 export const Header = ({ collapsed, setcollapsed}:props) => {
-    
+    const user = JSON.parse(localStorage.getItem('userList') || "null")   
     
     return (
-        <div className="py-10 px-6 bg-white shadow-md w-full " >
+        <div className="flex justify-between py-10 px-6 bg-white shadow-md w-full " >
         <div className=" flex flex-start gap-4 sticky">
             <button
                 onClick={() => setcollapsed(!collapsed)}
             >
                 {collapsed ? <HiOutlineMenuAlt2 size={25} /> : <HiOutlineMenuAlt3 size={ 25} />  }
             </button>
-        <input className=" border-[1px] rounded-md border-gray-300"/>
+        <input className=" border-[1px] h-[40px] rounded-md border-gray-300"/>
         </div>
-    
+            <div className="h-[60px] w-[60px] bg-black rounded-[50%]">
+                
+      </div>
     
     </div>)
 }
