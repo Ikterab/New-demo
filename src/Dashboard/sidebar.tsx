@@ -17,7 +17,7 @@ export const Sidebar = ({ collapsed }: props) => {
     return (<>
         <div className={`w-[300px] h-full top-0 py-10 ${roleConfig.sidebarbg} ${roleConfig.textclass} fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  >
               <h1 className="px-10 text-[30px] text-white font-semibold ">Demian </h1>
-            <div>
+            {/* <div>
                 {
                     ["Profile", "About Us", "Our Companies", "Contact US"].map((items, index) => (
                         <Link
@@ -30,8 +30,24 @@ export const Sidebar = ({ collapsed }: props) => {
                         </Link>
                     ))
                 }
+            </div> */}
+            <div>
+                {
+                    roleConfig.menu.map((items, index) => (
+                        <Link
+                            key={index}
+                            to={items.path}
+                            className={`flex  px-10 py-1 ${forarrow.includes(items.name) ? ' space-x-2 ' : ''}`}
+                        >
+                            <span className="font-semibold ">{items.name}</span>
+                            {forarrow.includes(items.name) && <MdOutlineKeyboardArrowDown style={{ fontSize: "24px" }} />}
+                        </Link>
+                    ))
+                }
             </div>
-    </div>
+
+
+        </div>
     
     
     </>)

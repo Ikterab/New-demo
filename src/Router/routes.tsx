@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: 'dashboard/requester',
+                path: '/dashboard/requester',
                 element: (<Protectedroute roles={[Category.Requester]}>
                     <Dashboard />
                 </Protectedroute>) ,
@@ -51,17 +51,17 @@ export const router = createBrowserRouter([
 
                 },
                     {
-                        path: 'Test1',
+                        path: 'test1',
                         element: <Test1/>
 
                     },
                     {
-                        path: 'Test2',
+                        path: 'test2',
                         element:<Test2/>
                     
                     },
                     {
-                        path: 'Test3',
+                        path: 'test3',
                         element: <Test3/>
 
                     }
@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
                 ]
             },
             {
-                path: 'dashboard/admin',
+                path: '/dashboard/admin',
                 element: (<Protectedroute roles={[Category.Admin]}>
                     <Dashboard />
                 </Protectedroute>),
@@ -79,17 +79,17 @@ export const router = createBrowserRouter([
 
                 },
                     {
-                        path: 'Test1Admin',
+                        path: 'test1',
                         element: <Test1Admin />
 
                     },
                 {
-                    path: 'Test2Admin',
+                    path: 'test2',
                     element: <Test2Admin />
 
                 },
                 {
-                    path: 'Test3Admin',
+                    path: 'test3',
                     element: <Test3Admin />
 
                 }
@@ -97,7 +97,7 @@ export const router = createBrowserRouter([
                 ]
             },
             {
-                path: 'dashboard/accountant',
+                path: '/dashboard/accountant',
                 element: (
                     <Protectedroute roles={[Category.Accountant]}>
                         <Dashboard />
@@ -108,17 +108,17 @@ export const router = createBrowserRouter([
 
                 },
                     {
-                        path: 'Test1Acc',
+                        path: 'test1',
                         element: <Test1Acc />
 
                     },
                 {
-                    path: 'Test2Acc',
+                    path: 'test2',
                     element: <Test2Acc />
 
                 },
                 {
-                    path: 'Test3Acc',
+                    path: 'test3',
                     element: <Test3Acc/>
 
                 }
