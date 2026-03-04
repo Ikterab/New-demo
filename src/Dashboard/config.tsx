@@ -22,7 +22,7 @@ export type dashboardMenuItem = {
 }
 export type categoryType= typeof Category[keyof typeof Category]
 export type Dashboardrole = {
-    sidebarbg: string,
+    sidebarbg: string,      
     textclass: string,
     rootpath: string,
     menu: dashboardMenuItem[],

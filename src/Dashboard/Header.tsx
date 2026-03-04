@@ -72,7 +72,7 @@ export const Header = ({ collapsed, setcollapsed}:props) => {
         </div>
             <Dropdown
                 className=""
-                menu={{ items }} trigger={['click']}>
+                menu={{ items }} trigger={['click']} placement="bottomRight" overlayStyle={{ width:'100px' }}>
                 <div
                     // onClick={() => setOpen(!open)}
                     className={`h-[60px] w-[60px] ${roleConfig.textclass} rounded-[50%] cursor-pointer ${roleConfig.sidebarbg}  `}>
