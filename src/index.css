@@ -3,11 +3,33 @@
 
 /* @import "tailwindcss/preflight"
 @import "tailwind/utilities"; */
+@theme{
+  --color-prime:#93c5fd;
+   /* Blues */
+  --color-blue-light: #dbeafe;
+  --color-blue-soft: #93c5fd;
+  --color-blue-dark: #1e40af;
+  --color-blue-deep: #1e3a8a;
+  --color-accent: #38bdf8;
+  --color-bg: #f8fafc;
+  --color-text: #0f172a;
 
+  /* Fonts */
+  --font-barlow: "Barlow", sans-serif;
+  --font-vidaloka: "Vidaloka", serif;
+
+  /* Default font */
+  --font-sans: "Barlow", sans-serif;
+}
 
 @layer components{
   .horizantalPadding {
-  @apply  px-6 sm:px-8 md:px-10 lg:px-16 xl:px-20
+  @apply  
+  px-6 
+  sm:px-8 
+  md:px-10 
+  lg:px-16 
+  xl:px-20
 }
 }
 

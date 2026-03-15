@@ -1,4 +1,45 @@
 #root {
+  
+  --color-prime:#1e40af;
+  --color-blue-light: #dbeafe;
+  --color-blue-soft: #93c5fd;
+
+  
+  /* Dark blues */
+  --color-blue-dark: #1e40af;
+  --color-blue-deep: #1e3a8a;
+
+  /* Accent color */
+  --color-accent: #38bdf8;
+
+  /* Neutral colors */
+  --color-bg: #f8fafc;
+  --color-text: #0f172a;
+
+  /* Existing color */
+  --color-darkGreen: #064e3b;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   /* max-width: 1880px; */
   margin: 0 auto;
   /* padding: 2rem; */

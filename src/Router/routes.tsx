@@ -23,13 +23,14 @@ export const router = createBrowserRouter([
         element: <Mainlayout />,
         children: [{
             // path: '/Registerpage',
-            path:"/",
-            element:<Register/>,
+            path: "/",
+            element: <Register />,
         },
-            {
-                path: '/Loginpage',
-                element:<Login/>,
-            },
+        {
+            path: '/Loginpage',
+            element: <Login />,
+        }],
+    },
             {
                 path: '/Dashboard',
                 // element:<DashboardRedirect/>
@@ -136,5 +137,5 @@ export const router = createBrowserRouter([
         
         ],
         
-    }
-])
+    
+)

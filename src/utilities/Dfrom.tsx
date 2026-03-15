@@ -1,13 +1,12 @@
 import { Form } from "antd";
 import { useEffect, type ReactNode } from "react";
-import {
+import { useForm, FormProvider } from "react-hook-form"
+import type {
     Resolver,
     DefaultValues,
-    FormProvider,
     SubmitHandler,
-    useForm,
     UseFormReturn,
-    FieldValues
+    FieldValues,
 } from "react-hook-form";
  
 type FormConfig<T extends FieldValues> = {
@@ -24,7 +23,7 @@ type FormProps<T extends FieldValues> = {
 
 const Dform = <T extends FieldValues>({ id, defaultValues, resolver, onSubmit, mode='onSubmit', children }: FormProps<T>) => {
    
-    const methods = useForm<T>({ defaultValues, resolver, mode })
+    const methods:UseFormReturn<T> = useForm<T>({ defaultValues, resolver, mode })
     const { formState, reset } = methods;
     useEffect(() => {
         if (formState.isSubmitSuccessful)
