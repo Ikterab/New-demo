@@ -1,5 +1,9 @@
 import React from "react";
-
+import Form from "antd";
+import { Input } from "antd";
+import { InputNumber } from "antd";
+import Upload from "antd";
+import Select from "antd";
 const Test1 = () => {
     return (<>
     

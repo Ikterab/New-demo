@@ -34,6 +34,7 @@ const DInput = ({ type, name, required, label, disabled, icon, placeholder, clas
                             {...field}
                             type={type }
                             id={name}
+                            
                             className={cn(className)}
                             size='large'
                             disabled={disabled}
@@ -47,6 +48,8 @@ const DInput = ({ type, name, required, label, disabled, icon, placeholder, clas
                             <Input
                                 {...field}
                                 type={type}
+                                suffix={icon}
+                                className={cn(className)}
                                 placeholder={placeholder}
                                 id={name}
                                 disabled={disabled}
@@ -60,4 +63,4 @@ const DInput = ({ type, name, required, label, disabled, icon, placeholder, clas
     )
     
 }
-export default DInput
+export default DInput         
