@@ -5,18 +5,23 @@ import { Menu, X } from 'lucide-react'
 import { Link } from "react-router-dom";
 import  { dashboardConfig, Category } from "./config";
 import type { categoryType } from "./config";
+import { DashboardConfigHook } from "../Hooks/dashboardconfigHooks";
 type props = {
     collapsed:boolean
 }
 
 export const Sidebar = ({ collapsed }: props) => {
     const forarrow=["About Us","Our Companies"]
-    const user= JSON.parse(localStorage.getItem("userList") || "null")
-       const role=user?.category as categoryType
-       const roleConfig=dashboardConfig[role] || dashboardConfig[Category.Requester]
+    // const user= JSON.parse(localStorage.getItem("userList") || "null")
+    //    const role=user?.category as categoryType
+    //    const roleConfig=dashboardConfig[role] || dashboardConfig[Category.Requester]
+    const {role, sidebarbg, menu, textclass, rootpath, user } = DashboardConfigHook()
+    
     return (<>
-        <div className={`w-[300px] h-full top-0 py-10 ${roleConfig.sidebarbg} ${roleConfig.textclass} fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  >
-              <h1 className="px-10 text-[30px] text-white font-semibold ">Demian </h1>
+        {/* <div className={`w-[300px] h-full top-0 py-10 ${roleConfig.sidebarbg} ${roleConfig.textclass} fixed ${collapsed ?"left-[-300px]":"left-0"} duration-300 transition-all`}  > */}
+        <div className={`w-[300px] h-full top-0 py-10 ${sidebarbg} ${textclass} fixed ${collapsed ? "left-[-300px]" : "left-0"} duration-300 transition-all`}  >
+
+        <h1 className="px-10 text-[30px] text-white font-semibold ">Demian </h1>
             {/* <div>
                 {
                     ["Profile", "About Us", "Our Companies", "Contact US"].map((items, index) => (
@@ -33,7 +38,9 @@ export const Sidebar = ({ collapsed }: props) => {
             </div> */}
             <div>
                 {
-                    roleConfig.menu.map((items, index) => (
+                    // roleConfig.menu.map((items, index) => (
+                    menu.map((items, index) => (
+
                         <Link
                             key={index}
                             to={items.path}

@@ -63,4 +63,4 @@ const DInput = ({ type, name, required, label, disabled, icon, placeholder, clas
     )
     
 }
-export default DInput         
+// export default DInput         

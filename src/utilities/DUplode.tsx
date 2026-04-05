@@ -13,10 +13,10 @@ type uplodeprops = {
     label?: string;
     acceptTypes?: string;
     multipleTypes?: boolean;
-    classNema?: string;
+    className?: string;
 }
 
-const DUplode = ({ name, classNema, required, label, icon, placeholder, acceptTypes = '.png,.jpg,.jpeg,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv', multipleTypes=false }:uplodeprops) => {
+const DUplode = ({ name, className, required, label, icon, placeholder, acceptTypes = '.png,.jpg,.jpeg,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv', multipleTypes=false }:uplodeprops) => {
     const { control } = useFormContext()
     const [fileList, setFileList]=useState<UploadFile[]>([])
     return (
@@ -42,7 +42,7 @@ const DUplode = ({ name, classNema, required, label, icon, placeholder, acceptTy
                         }}
                     >
                         <Button icon={icon || <UploadOutlined />}></Button> 
-                        {placeholder}
+                        {placeholder}   
                     </Upload>
                 </Form.Item>
 

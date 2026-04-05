@@ -14,6 +14,7 @@ import type { MenuProps } from "antd";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { Avatar } from "../utilities/Avatar";
+import { DashboardConfigHook } from "../Hooks/dashboardconfigHooks";
 type props = {
     collapsed: boolean
     setcollapsed:(value:boolean)=>void
