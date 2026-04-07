@@ -15,17 +15,20 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { Avatar } from "../utilities/Avatar";
 import { DashboardConfigHook } from "../Hooks/dashboardconfigHooks";
+import { type AppDispatch  } from "../Redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../Redux/redux";
 type props = {
     collapsed: boolean
     setcollapsed:(value:boolean)=>void
 }
 export const Header = ({ collapsed, setcollapsed}:props) => {
     const user = JSON.parse(localStorage.getItem('userList') || "null")   
-    const role = user.category as categoryType
+    const role = user?.category as categoryType
     const roleConfig = dashboardConfig[role]
     // const [open,setOpen]=useState(false)
     const navigate = useNavigate()
-    
+    const dispatch=useDispatch<AppDispatch>()
     function handleLogout(){
         console.log("clicked logout");
         Modal.confirm(
@@ -35,8 +38,10 @@ export const Header = ({ collapsed, setcollapsed}:props) => {
                 okText: 'Logout',
                 okType: 'danger',
                 onOk:(() => {
-                    localStorage.removeItem('userList')
-                    navigate('/Loginpage')
+                    // localStorage.removeItem('userList')
+                    // navigate('/Loginpage')
+                    dispatch(logoutUser())
+                    navigate('/')
                  })
                 
             }
