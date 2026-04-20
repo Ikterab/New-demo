@@ -7,7 +7,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { dashboardConfig } from "./config";
 import { Category } from "./config";
-import { Dropdown,Modal } from 'antd';
+import { Dropdown,Input,Modal } from 'antd';
 import type{ categoryType } from "./config";
 import { useState } from "react";
 import type { MenuProps } from "antd";
@@ -85,7 +85,6 @@ export const Header = ({ collapsed, setcollapsed}:props) => {
                     <span className="flex justify-center py-3 font-bold text-[23px]">
                         {user.name?.[0]}
                     </span>
-
                 </div>
                 {/* <Avatar user={user } roleConfig={roleConfig} /> */}
             </Dropdown>
