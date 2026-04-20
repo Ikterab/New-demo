@@ -13,6 +13,7 @@ import { RxCross2 } from "react-icons/rx";
 import { object } from "zod";
 import { FaFilter } from "react-icons/fa";
 import { FilterCard } from './../utilities/card';
+import { Filtercolumn } from "../utilities/filter";
 const Test1 = () => {
     type userType = {
         id: number,
@@ -69,16 +70,24 @@ const {data,isLoading,isError}=useUsersListQuery(undefined)
         {
             title: (<div className="flex justify-between ">
                 <span>ID</span>
-                <Input
+               
+                {/* <Input
                 style={{width:"180px"}}
                     placeholder="Enter Id"
                     name="id"
                     value={search?.id}
                     onChange={handltChange}
                     prefix={<SearchOutlined className="!text-gray-500"/>}
-                />
+                /> */}
             </div>),
             dataIndex: 'id',
+            ...Filtercolumn(
+                {
+                    dataIndex: "id", 
+                    search,
+                    setSearch
+                }
+            ),
             width:300
         },
         {
