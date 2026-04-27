@@ -8,7 +8,7 @@ import {Input} from "antd";
 import { Table } from "antd";
 import { useState } from "react";
 import {useUsersListQuery } from "../Redux/API/Baseapi/Dashboard/user";
-import { SearchOutlined } from '@ant-design/icons'
+import { SearchOutlined } from '@ant-design/icons' 
 import { RxCross2 } from "react-icons/rx";
 import { object } from "zod";
 import { FaFilter } from "react-icons/fa";
@@ -164,7 +164,7 @@ const {data,isLoading,isError}=useUsersListQuery(undefined)
                         </button>
                     </div>
                 </div>)} */}
-                <div className="flex gap-2 wrap">
+                {/* <div className="flex gap-2 wrap">
                     {Object?.entries(search)?.map(([key, value]) => {
                         if (!value) return null
                         return (
@@ -175,7 +175,25 @@ const {data,isLoading,isError}=useUsersListQuery(undefined)
                             />
                         )
                      })}
+                </div> */}
+                <div className="flex gap-2 wrap">
+                    {Object.entries(search)?.map(([field, value])=>{
+                        if (!value) return null
+                        return (
+                            <FilterCard
+                                key={field}
+                                label={value}
+                                field={field}
+                                setSearch={setSearch}
+                        
+                            />
+                    )
+                    
+                    })
+
+                    }
                 </div>
+                
                 <Table
                     className="font-semibold "
                     dataSource={filteredData}
