@@ -60,10 +60,10 @@ const {data,isLoading,isError}=useUsersListQuery(undefined)
 
     }
 
-    const handleClearfield = (field:any) => {
-     setSearch((prev)=>({...prev,[field]:''}))
+    // const handleClearfield = (field:any) => {
+    //  setSearch((prev)=>({...prev,[field]:''}))
         
-    }
+    // }
 
     const columns = [
     

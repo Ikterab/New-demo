@@ -16,6 +16,7 @@ import Test2Admin from "../Pages/Test2forAdmin";
 import Test3Admin from "../Pages/Test3forAdmin";
 import CommonDashboard from "../Pages/Commondashboardpage";
 import { AboutUs } from "../Pages/Aboutus";
+import Careers from "../Pages/careers";
 // import { categoryType } from "../Dashboard/config";
 import { Category } from "../Dashboard/config";
 export const router = createBrowserRouter([
@@ -34,7 +35,11 @@ export const router = createBrowserRouter([
             {
                 path: '/about us',
                 element:<AboutUs/>
-        }
+            },
+            {
+                path: '/careers',
+                element:<Careers/>
+            }
         
         
         ],

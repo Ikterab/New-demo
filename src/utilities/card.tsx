@@ -4,8 +4,8 @@ import { RxCross2 } from "react-icons/rx";
 
 
 
-export const FilterCard = ({ label, field,setSearch, onclear }: any) => {
-    const handleClearfield = (field: any) => {
+export const FilterCard = ({ label, field,setSearch,  }: any) => {
+    const handleClearfield = () => {
         setSearch((prev:any) => ({ ...prev, [field]: '' }))
 
     }
