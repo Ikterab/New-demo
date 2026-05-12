@@ -5,7 +5,7 @@ import { Register } from './Pages/Registerpage'
 import { Login } from './Pages/Loginpage'
 import  Register1test from './Pages/register1test'
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
-import './App.css'
+// import './App.css'
 
 function App() {
   // const [count, setCount] = useState(0)

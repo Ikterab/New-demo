@@ -7,7 +7,7 @@ import { Form,Input, Button, Modal,Spin, message} from 'antd';
 // import useSelection from "antd/es/table/hooks/useSelection";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../Redux/redux";
-//  import { UseDispatch } from "react-redux";
+//  import { UseDispatch } from "react-redux"; 
 export type RegisterData = {
   name: string
   email: string

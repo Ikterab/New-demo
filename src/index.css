@@ -22,6 +22,7 @@
   --font-sans: "Barlow", sans-serif;
 }
 
+
 @layer components{
   .horizantalPadding {
   @apply  
@@ -30,6 +31,11 @@
   md:px-10 
   lg:px-16 
   xl:px-20
+}
+.h1{
+  @apply
+  text-[40px]
+  font-bold
 }
 }
 
