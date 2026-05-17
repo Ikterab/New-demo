@@ -8,12 +8,11 @@ const Test2 = () => {
    const [tableData, setTableData]=useState([]) 
     const Handlemodal = () => {
         setModalOpen(true)
-        
         console.log(modalOpen)
     }
     const handleData = (newdata:any) => {
         setTableData((prev):any => [...prev, newdata])
-        setModalOpen(true)
+        setModalOpen(false)
 
     }
     return (<>
@@ -40,7 +39,7 @@ const Test2 = () => {
                     onCancel={() => setModalOpen(false) }
                 >
                  {/* <p>just for test</p> */}
-                    <Testform data={ handleData} />
+                    <Testform data={ handleData} setModalOpen={setModalOpen} />
                 </Modal>
                 
     </div>

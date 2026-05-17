@@ -5,7 +5,6 @@ import { RouterProvider } from 'react-router-dom'
 import { store } from './Redux/store.ts'
 import './index.css'
 import './App.css'
-
 import App from './App.tsx'
 import { router } from './Router/routes.tsx'
 

@@ -2,13 +2,22 @@ import React from "react";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { Header } from './../Dashboard/Header';
+import { required } from "zod/mini";
 
-export function Testform({data}:any) {
+type modalTypes = {
+    data: (values: any) => void,
+    setModalOpen:React.Dispatch<React.SetStateAction<boolean>>
+
+
+}
+export function Testform({ data , setModalOpen }: modalTypes) {
    const [form]=Form.useForm()
     const handlesubmit = (values: any) => {
         console.log(values)
         data(values)
         form.resetFields()
+
+        setModalOpen(false)
    }
    
     return (
@@ -20,27 +29,37 @@ export function Testform({data}:any) {
                     layout="vertical"
                     onFinish={handlesubmit}
                 >
-                    <Form.Item
-                        label={<span>Enter your name</span>}
-                        name="name"
-                        rules={[{required:true , message:"Name is required"}]}
-                    >
-                        <Input />
-                    </Form.Item>
-                    <Form.Item
-                        label={<span>Enter your email</span>}
-                        name="email"
-                        rules={[{ required: true, message: "Email is required" }]}
-                    >
-                        <Input />
-                    </Form.Item>
-                    
+                    <div className="flex justify-between">
+                        <Form.Item
+                            label={<span>Enter your name</span>}
+                            name="name"
+                            rules={[{ required: true, message: "Name is required" }]}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            label={<span>Enter your email</span>}
+                            name="email"
+                            rules={[{ required: true, message: "Email is required" }]}
+                        >
+                            <Input />
+                        </Form.Item>
+                    </div>
+                 <div></div>
                     <Form.Item
                         label={<span>Enter your phone number</span>}
                         name="phonenumber"
                         rules={[{ required: true, message: "Phone number is required" }]}
                     >
                         <Input />
+                    </Form.Item >
+                    
+                    <Form.Item
+                        label={<span>Home Address</span>}
+                        name="address"
+                        rules={[{ required: true, message: "Enter your home address" }]}
+                    >
+                        <Input/>
                     </Form.Item>
                     <Form.Item>
                         <Button

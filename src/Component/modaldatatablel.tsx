@@ -22,6 +22,12 @@ const DataTable = ({ tableData }:any) => {
             title: "Phone",
             dataIndex: "phonenumber",
         },
+
+        {
+            title: "Address",
+            dataIndex: "address",
+        },
+
     ];
 
     return (
