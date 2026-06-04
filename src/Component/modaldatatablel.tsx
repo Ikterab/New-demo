@@ -27,9 +27,13 @@ const DataTable = ({ tableData }:any) => {
             title: "Address",
             dataIndex: "address",
         },
+        {
+            title: "Amount",
+            dataIndex:"amount"
+        }
 
     ];
-
+console.log(tableData)
     return (
         <>
             <div className="mt-10 w-[700px]">

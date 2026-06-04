@@ -14,13 +14,13 @@ const Test2 = () => {
         setTableData((prev):any => [...prev, newdata])
         setModalOpen(false)
 
-    }
-    return (<>
+    } 
+    return (<> 
     
         <div className="text-center">
     
-            <div className="flex flex-col justify-center items-center">
-                <h1 className="h1 ">Form developed</h1>
+            <div className="flex flex-col justify-center items-center mt-3">
+                {/* <h1 className="h1 ">Form developed</h1> */}
                  
                 <div className=" max-w-md   bg-white shadow-[5px_5px_25px_rgba(0,0,0,0.2)] px-10 py-10 ">
                     <p className="text-lg font-semibold  ">Test form</p>

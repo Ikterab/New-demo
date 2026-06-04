@@ -61,6 +61,13 @@ export function Testform({ data , setModalOpen }: modalTypes) {
                     >
                         <Input/>
                     </Form.Item>
+                    <Form.Item
+                        label={<span>Amount</span>}
+                        name="amount"
+                        rules={[{required:true, message:"Enter an amount"}]}
+                    >
+                        <Input/>
+                    </Form.Item>
                     <Form.Item>
                         <Button
                             htmlType="submit"
