@@ -1,19 +1,10 @@
-// import React from "react";
-
-// const Test3 = () => {
-//     return (<>
-    
-//     <div></div>
-    
-//     </>)
-// }
-
-// export default Test3
 import React from "react";
 import { useState } from "react";
 import { Form, Input, Button, Modal, Spin, message } from 'antd';
-import { Testform } from "../Component/modalform";
-import DataTable from "../Component/modaldatatablel";
+// import { Testform } from "../Component/modalform";
+import { Testform2 } from "../Component/modalform2";
+// import DataTable from "../Component/modaldatatablel";
+import DataTable2 from "../Component/modaldatatable2";
 const Test3 = () => {
     const [modalOpen, setModalOpen] = useState(false)
     const [tableData, setTableData] = useState([])
@@ -21,11 +12,11 @@ const Test3 = () => {
         setModalOpen(true)
         console.log(modalOpen)
     }
-    const handleData = (newdata: any) => {
-        setTableData((prev): any => [...prev, newdata])
-        setModalOpen(false)
+    // const handleData = (newdata: any) => {
+    //     setTableData((prev): any => [...prev, newdata])
+    //     setModalOpen(false)
 
-    }
+    // }
     return (<>
 
         <div className="text-center">
@@ -40,7 +31,8 @@ const Test3 = () => {
                         className="w-[200px] !bg-gray-400 !text-black mt-2">+ Enter Info</Button>
                 </div>
                 <div>
-                    <DataTable tableData={tableData} />
+                    {/* <DataTable tableData={tableData} /> */}
+                    <DataTable2/>
                 </div>
                 <Modal
                     title={<p>Just for test</p>}
@@ -50,7 +42,7 @@ const Test3 = () => {
                     onCancel={() => setModalOpen(false)}
                 >
                     {/* <p>just for test</p> */}
-                    <Testform data={handleData} setModalOpen={setModalOpen} />
+                    <Testform2 setModalOpen={setModalOpen} />
                 </Modal>
 
             </div>
